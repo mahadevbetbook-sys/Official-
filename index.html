@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>WhatsApp Chat</title>
+<title>Chat on WhatsApp</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -14,46 +14,43 @@ body{
   margin:0;
   background:#fff;
   min-height:100vh;
-  display:flex;
-  flex-direction:column;
 }
 
-/* Header */
-.header{
-  padding:15px;
-  text-align:center;
-  border-bottom:1px solid #eee;
-}
-.header img{
-  height:30px;
-}
-
-/* Center content */
-.main{
-  flex:1;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.container{
-  width:100%;
-  max-width:420px;
-  padding:20px;
+/* Top logo area */
+.logo-area{
+  padding-top:80px;
   text-align:center;
 }
+.logo-area img{
+  height:40px;
+}
 
-.text{
+/* Main content */
+.content{
+  margin-top:140px;
+  text-align:center;
+  padding:0 20px;
+}
+
+.title{
   color:#444;
   font-size:16px;
-  line-height:1.6;
 }
-.message{
+.name{
+  margin-top:6px;
+  font-size:18px;
+  font-weight:600;
+}
+.msg{
   margin-top:18px;
-  color:#666;
+  color:#777;
+  font-size:15px;
 }
 
+/* Button */
 .btn{
-  margin-top:25px;
+  margin:28px auto 0;
+  max-width:420px;
   background:#25D366;
   color:#fff;
   padding:14px;
@@ -63,99 +60,43 @@ body{
   display:block;
 }
 
+/* Download text */
 .download{
   margin-top:18px;
   font-size:14px;
+  color:#444;
 }
 .download a{
   color:#25D366;
   text-decoration:none;
   font-weight:500;
 }
-
-/* Bottom bar */
-.bottom{
-  background:#111;
-  padding:14px 0;
-  text-align:center;
-}
-.bottom a{
-  background:#25D366;
-  color:#fff;
-  padding:14px 60px;
-  border-radius:30px;
-  text-decoration:none;
-  font-size:18px;
-}
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<!-- WhatsApp logo -->
+<div class="logo-area">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </div>
 
-<div class="main">
-  <div class="container">
-    <div class="text">
-      Chat on WhatsApp with<br>
-      <b>WhatsApp Support</b>
-    </div>
+<!-- Content -->
+<div class="content">
+  <div class="title">Chat on WhatsApp with</div>
+  <div class="name">WhatsApp Support</div>
 
-    <div class="message">
-      Hello, I Need ID
-    </div>
+  <div class="msg">Hello, I Need ID</div>
 
-    <!-- Protected Button -->
-    <a class="btn" href="javascript:void(0)" onclick="openWA(this)">
-      Open app
-    </a>
+  <a class="btn" href="https://wa.link/huofh0">
+    Open app
+  </a>
 
-    <div class="download">
-      Don’t have the app?
-      <a href="javascript:void(0)" onclick="openWA(this)">Download it now</a>
-    </div>
+  <div class="download">
+    Don’t have the app?
+    <a href="https://wa.link/huofh0">Download it now</a>
   </div>
 </div>
-
-<div class="bottom">
-  <a href="javascript:void(0)" onclick="openWA(this)">Download</a>
-</div>
-
-<!-- PROTECTION SCRIPT -->
-<script>
-let clicked = false;
-
-// background / bot tab protection
-document.addEventListener("visibilitychange",()=>{
-  if(document.hidden){
-    clicked = true;
-  }
-});
-
-function openWA(btn){
-  if(clicked) return;
-  clicked = true;
-
-  // repeat device soft block
-  if(localStorage.getItem("wa_clicked")){
-    alert("Please wait a moment and try again.");
-    return;
-  }
-  localStorage.setItem("wa_clicked","1");
-  setTimeout(()=>localStorage.removeItem("wa_clicked"),15000);
-
-  // user feedback
-  btn.innerText = "Opening WhatsApp…";
-  btn.style.opacity = "0.85";
-
-  // soft delay (human feel)
-  setTimeout(()=>{
-    window.location.href = "https://wa.link/huofh0";
-  },1800);
-}
-</script>
 
 </body>
 </html>
