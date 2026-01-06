@@ -13,12 +13,9 @@
 body{
   margin:0;
   background:#fff;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
 }
 
-/* Top WhatsApp icon */
+/* Top logo */
 .logo-area{
   padding-top:60px;
   text-align:center;
@@ -27,12 +24,93 @@ body{
   height:56px;
 }
 
-/* Main content */
+/* Content */
 .content{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
   text-align:center;
-  padding
+  padding:80px 20px 40px;
+}
+
+.title{
+  color:#444;
+  font-size:16px;
+}
+.name{
+  margin-top:6px;
+  font-size:19px;
+  font-weight:600;
+}
+.msg{
+  margin-top:18px;
+  color:#777;
+  font-size:15px;
+}
+
+/* Button */
+.btn{
+  margin:30px auto 0;
+  max-width:420px;
+  width:100%;
+  background:#25D366;
+  color:#fff;
+  padding:14px;
+  font-size:18px;
+  border-radius:30px;
+  text-decoration:none;
+  display:block;
+}
+
+/* Download */
+.download{
+  margin-top:18px;
+  font-size:14px;
+  color:#444;
+}
+.download a{
+  color:#25D366;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* Footer */
+.footer{
+  border-top:1px solid #eee;
+  padding:16px 0;
+  text-align:center;
+  color:#888;
+  font-size:13px;
+}
+.footer span{
+  color:#25D366;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo-area">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</div>
+
+<div class="content">
+  <div class="title">Chat on WhatsApp with</div>
+  <div class="name">WhatsApp Support</div>
+
+  <div class="msg">Hello, I Need ID</div>
+
+  <a class="btn" href="https://wa.link/huofh0">
+    Open app
+  </a>
+
+  <div class="download">
+    Don’t have the app?
+    <a href="https://wa.link/huofh0">Download it now</a>
+  </div>
+</div>
+
+<div class="footer">
+  <span>WhatsApp</span> from Meta
+</div>
+
+</body>
+</html>
