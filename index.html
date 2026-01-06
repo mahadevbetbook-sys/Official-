@@ -5,6 +5,25 @@
 <title>Chat on WhatsApp</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1410374150626946');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1410374150626946&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
 *{
   box-sizing:border-box;
@@ -13,9 +32,12 @@
 body{
   margin:0;
   background:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
-/* Top logo */
+/* Logo */
 .logo-area{
   padding-top:60px;
   text-align:center;
@@ -26,6 +48,7 @@ body{
 
 /* Content */
 .content{
+  flex:1;
   text-align:center;
   padding:80px 20px 40px;
 }
@@ -98,13 +121,18 @@ body{
 
   <div class="msg">Hello, I Need ID</div>
 
-  <a class="btn" href="https://wa.link/9xo186">
-    Open app
+  <a class="btn"
+     href="https://wa.link/9xo186"
+     onclick="fbq('track','Lead')">
+     Open app
   </a>
 
   <div class="download">
     Don’t have the app?
-    <a href="https://wa.link/9xo186">Download it now</a>
+    <a href="https://wa.link/9xo186"
+       onclick="fbq('track','Contact')">
+       Download it now
+    </a>
   </div>
 </div>
 
